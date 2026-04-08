@@ -8,6 +8,7 @@ import { FilePlayerPanel } from './components/FilePlayer';
 import { VisualParams } from './components/VisualParams';
 import { RecorderPanel } from './components/RecorderPanel';
 import { DrumMachine } from './components/DrumMachine';
+import { LaserCubePanel } from './components/LaserCubePanel';
 import { useNoteEvents } from './hooks/useNoteEvents';
 import { SoundEngine } from './audio/SoundEngine';
 import { MidiAccess } from './audio/MidiAccess';
@@ -293,6 +294,13 @@ export default function App() {
           />
         </div>
       )}
+
+      {/* LaserCube integration panel */}
+      <LaserCubePanel
+        subscribeNoteOn={subscribeNoteOn}
+        subscribeNoteOff={subscribeNoteOff}
+        keyPositions={keyPositions}
+      />
 
       {/* Piano keyboard */}
       <div style={{ flexShrink: 0 }}>

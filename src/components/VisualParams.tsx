@@ -128,7 +128,7 @@ export function VisualParams({ vizMode, particleSystem, cymaticsEngine }: Props)
 
   const updateP = useCallback(<K extends keyof ParticleParams>(key: K, val: ParticleParams[K]) => {
     setP(prev => ({ ...prev, [key]: val }));
-    if (particleSystem) (particleSystem as Record<string, unknown>)[key] = val;
+    if (particleSystem) (particleSystem as unknown as Record<string, unknown>)[key] = val;
   }, [particleSystem]);
 
   const updateC = useCallback(<K extends keyof CymaticsParams>(key: K, val: CymaticsParams[K]) => {
